@@ -1,1 +1,9 @@
 *~
+*.dvi
+*.lof
+*.log
+*.pdf
+*.gz
+*.toc
+*.aux
+*.lot

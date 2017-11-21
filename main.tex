@@ -1,0 +1,75 @@
+\documentclass[12pt,a4j]{jreport}
+
+%\documentclass[a4j]{jreport} //default
+   % MacでUpTeXの場合jarticleはujarticle
+\usepackage[dvipdfmx]{color,graphicx}
+%\usepackage{mediabb} %　for pdf BB
+%\usepackage{nruby} %　ルビ
+%\usepackage{shadow}  % 影付の四角枠
+%\usepackage{fancybox} % いろいろ凝った枠
+%\usepackage{longtable} %  ページを跨ぐ大きな表( Tabularもある )
+%\usepackage{mathrsfs}  %  花文字ローマ字　他にもいろいろある
+%\usepackage{amsmath,amsthm,amssymb}　% アメリカ数学会の記号など
+%\usepackage{ascmac}  %  角の丸い枠で複数行を囲む
+%\usepackage{multicolpar} % 対訳文のように左右に文を分けて書く
+%\usepackage{fancyvrb} % 書いてあるままの出力に対する周辺装飾
+%\usepackage{alltt}  % verbatimでは困るときに使える?
+
+\setlength{\textwidth}{17.5cm}  % テキストの幅を指定
+\setlength{\textheight}{24cm}  % テキストの高さを指定
+\setlength{\oddsidemargin}{0.1cm}
+\setlength{\evensidemargin}{0.1cm}
+\setlength{\hoffset}{-8mm}
+\setlength{\voffset}{0cm}
+\setlength{\topmargin}{-0.2cm}
+\setlength{\headheight}{0cm}
+\setlength{\headsep}{0cm}
+%\includeonly{chap1,chap2}
+\title{\large 平成２9年度修士論文 \\
+\vspace{2cm}
+\LARGE 多変量解析(MVA)を用いた \\ 電子陽子識別性能の研究}
+\author{ 早稲田大学\\
+ 先進理工学部 物理学科\\ 鳥居研究室 \\
+1Y12A067-1 \\
+\vspace{1cm}\\
+ 宮田諒平}
+\begin{document}
+\maketitle
+\newpage
+
+ \begin{center}
+概要
+ \end{center}
+
+CALET（CALorimetric Electron Telescope）は20TeVにまで及ぶ電子スペクト
+ルの測定を主目的として、2015年10月より観測を続けている。
+CALETは電子観測に最適化されており、TeV領域まで高精度に宇宙線電子のスペクトルを
+求める事により、宇宙線加速源の同定・加速伝播機構の解明が可能になると期待されている。
+この目的に際し重要なのは、軌道上観測データ解析においていかにして電子のイベントを
+選別出来るか、特に電荷で見分ける事の出来ない陽子をどれだけ排除出来るかである。
+
+CALET検出器内で電子は電磁シャワー、陽子はハドロンシャワーを起こす為、そのシャワーの
+形状の違いを表すパラメータを粒子識別に利用出来る。具体的には、シャワーの横広がりや
+縦発達の具合などである。これ以外にも、粒子識別を可能にするパラメータは存在するが
+多く使用すればするほどパラメータ間の相関を考慮した適切な選別しきい値決定は困難になる。
+
+本研究では上記課題を解決する為、機械学習によるクラス分類手法の一つである
+BDT(Boosted Decision Trees)を利用してCALETで観測可能なエネルギー領域で電子陽子識別が
+十分に可能なパラメータ群のしきい値決定を行った。これにより電子に対する陽子の割合を
+10GeV~1TeVの領域で5\%以下に、1TeV~20TeVの領域で20\%以下に留める事が出来る事を
+確認した。本論文ではこのBDT解析詳細について記述する。
+
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+
+\input{chap0}
+\input{AnalysisProcedure}
+
+\end{document}
+
+
+
